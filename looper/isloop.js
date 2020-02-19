@@ -1,10 +1,8 @@
 'use strict';
 
 //Complete this algo
+<<<<<<< HEAD
 const isLoop = (linkedlist) => {
-    // console.log('LINKED LIST', linkedlist)
-    // console.log('NODE EQUALS', linkedlist.head === linkedlist.head)
-
     let head = linkedlist.head;
     let arr = []
 
@@ -19,8 +17,11 @@ const isLoop = (linkedlist) => {
     }
 
     return false
+=======
+const isLoop = linkedlist => {
+  console.log(linkedlist);
+>>>>>>> 2dbecf8821ce655ba29536ef8f9219499cd989b0
 };
-
 
 /*
 EXTRA CREDIT:
@@ -30,4 +31,4 @@ This function should return the Node value the loop begins at
 Remember to write some test specs too!
 
 */
-module.exports = isLoop
+module.exports = isLoop;
