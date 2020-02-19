@@ -44,4 +44,22 @@ const binarySearch = (array, target) => {
 
 */
 
+const binarySearch = (array, target) => {
+  let midPoint = Math.floor(array.length / 2);
+  let start = 0;
+  let end = array.length - 1;
+
+  while (array[midPoint] !== target) {
+    if (start === end) {
+      return false;
+    } else if (array[midPoint] > target) {
+      end = midPoint;
+    } else {
+      start = midPoint + 1;
+    }
+    midPoint = Math.floor(start + (end - start) / 2);
+  }
+  return true;
+};
+
 module.exports = binarySearch;
