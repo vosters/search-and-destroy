@@ -1,8 +1,38 @@
 'use strict';
 
 // Complete this algo
+//RECURSIVE
 const binarySearch = (array, target) => {
-	
+  let midPoint = Math.floor(array.length / 2);
+  if (array[midPoint] === target) {
+    return true;
+  } else if (array.length <= 1 && array[midPoint] !== target) {
+    return false;
+  }
+  if (array[midPoint] > target) {
+    let newArray = array.slice(0, midPoint);
+    return binarySearch(newArray, target);
+  } else {
+    let newArray = array.slice(midPoint + 1);
+    return binarySearch(newArray, target);
+  }
+};
+
+//WHILE LOOP
+const binarySearch = (array, target) => {
+  let midPoint = Math.floor(array.length / 2);
+  let newArray = array;
+  while (newArray[midPoint] !== target) {
+    if (newArray.length <= 1) {
+      return false;
+    } else if (newArray[midPoint] > target) {
+      newArray = newArray.slice(0, midpoint);
+    } else {
+      newArray = newArray.slice(midPoint + 1);
+    }
+    midPoint = Math.floor(newArray.length / 2);
+  }
+  return true;
 };
 
 /*
@@ -14,4 +44,4 @@ const binarySearch = (array, target) => {
 
 */
 
-module.exports = binarySearch
+module.exports = binarySearch;
